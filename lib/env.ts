@@ -12,11 +12,13 @@ const envSchema = z.object({
   AUTH_GOOGLE_SECRET: z.string().optional(),
   AUTH_GITHUB_ID: z.string().optional(),
   AUTH_GITHUB_SECRET: z.string().optional(),
+  AUTH_SECRET: z.string().min(1).default('fallback-secret-for-dev-only'),
 
   // Database
   DATABASE_URL: z.string().default('file:./dev.db'),
 
   // Webhooks
+  WEBHOOK_SECRET: z.string().optional(),
   WEBHOOK_SECRET_N8N: z.string().min(16),
   WEBHOOK_SECRET_EVOLUTION: z.string().min(16).optional(),
   WEBHOOK_SECRET_META: z.string().min(16).optional(),

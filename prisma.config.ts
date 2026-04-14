@@ -5,7 +5,6 @@ import { defineConfig } from "prisma/config";
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
-  engine: "classic",
   migrations: {
     path: "prisma/migrations",
   },
